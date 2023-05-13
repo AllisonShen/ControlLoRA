@@ -82,38 +82,38 @@ dataset:
             # - target: control_lora.datasets.UniformerDataset
             #   params:
             #     index_in_mix: 5
-            - target: control_lora.datasets.MidasDataset
-              params:
-                guide_type: depth
-                index_in_mix: 6
+            # - target: control_lora.datasets.MidasDataset
+            #   params:
+            #     guide_type: depth
+            #     index_in_mix: 6
             # - target: control_lora.datasets.MidasDataset
             #   params:
             #     guide_type: normal
             #     index_in_mix: 7
-            - target: control_lora.datasets.OpenposeDataset
-              params:
-                index_in_mix: 9999
-                transparent_color_in_mix: [0, 0, 0]
-                always_keep_in_mix: true
+            # - target: control_lora.datasets.OpenposeDataset
+            #   params:
+            #     index_in_mix: 9999
+            #     transparent_color_in_mix: [0, 0, 0]
+            #     always_keep_in_mix: true
 
 trainer:
   target: control_lora.commands.trainer.Trainer
   params:
-    pretrained_model_name_or_path: runwayml/stable-diffusion-v1-5
+    pretrained_model_name_or_path: /scratch/network/xs6153/ControlLoRA/control_lora/pretrained
     output_dir: ckpts/sd-v1-5-control-lora-encoder-only-mul-mix-high-resolution-part
     train_batch_size: 1
     gradient_accumulation_steps: 1
-    checkpointing_steps: 5000
+    checkpointing_steps: 50 #5000
     sample_in_checkpointing: true
     resume_from_checkpoint: latest
     learning_rate: 0.00001
-    report_to: wandb
+    report_to: tensorboard #wandb
     lr_scheduler: constant
     lr_warmup_steps: 0
-    max_train_steps: 200000
+    max_train_steps: 100 #200000
     validation_prompt: portrait of a cute pink hair girl
     validation_epochs: -1
     mixed_precision: 'fp16'
     enable_xformers_memory_efficient_attention: false
     seed: 42
-    num_sampling_images: 100
+    num_sampling_images: 10 #100
