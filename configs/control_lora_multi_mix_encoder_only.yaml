@@ -49,13 +49,13 @@ dataset:
             - target: control_lora.datasets.CannyDataset
               params:
                 index_in_mix: 1
-            - target: control_lora.datasets.BaseDataset # actually a openpose dataset but make by `examples/make_mpii_preprocessed.py`
-              params:
-                index_in_mix: 1
-            - target: control_lora.datasets.MidasDataset
-              params:
-                guide_type: depth
-                index_in_mix: 1
+            # - target: control_lora.datasets.BaseDataset # actually a openpose dataset but make by `examples/make_mpii_preprocessed.py`
+            #   params:
+            #     index_in_mix: 1
+            # - target: control_lora.datasets.MidasDataset
+            #   params:
+            #     guide_type: depth
+            #     index_in_mix: 1
       - target: control_lora.datasets.MixDataset
         params:
           path: data/laion-high-resolution-part

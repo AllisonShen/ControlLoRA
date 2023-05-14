@@ -1,0 +1,43 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_size": 351352,
+  "description": "",
+  "download_checksums": {
+    "/scratch/network/xs6153/ControlLoRA/data/mpii_preprocessed.jsonl": {
+      "num_bytes": 369360,
+      "checksum": null
+    }
+  },
+  "download_size": 369360,
+  "features": {
+    "image": {
+      "_type": "Image"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "guide": {
+      "_type": "Image"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 720712,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 351352,
+      "num_examples": 1000,
+      "dataset_name": "json"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
