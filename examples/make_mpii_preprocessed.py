@@ -16,7 +16,7 @@ from datasets.dataset_dict import DatasetDict
 
 
 MAIN_DIR = os.path.abspath(os.path.dirname(__file__) + '/..')
-
+print(MAIN_DIR)
 img_dir = f'{MAIN_DIR}/data/MPII/cut/images'
 guide_dir = f'{MAIN_DIR}/data/MPII/cut/guides'
 os.makedirs(img_dir, exist_ok=True)

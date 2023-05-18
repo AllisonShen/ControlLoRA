@@ -36,7 +36,7 @@ def main():
         input_format="parquet",
         url_col="URL",
         caption_col="TEXT",
-        enable_wandb=True,
+        enable_wandb=False,
         number_sample_per_shard=1000,
         distributor="multiprocessing",
         resize_mode="keep_ratio"

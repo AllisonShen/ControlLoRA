@@ -157,6 +157,11 @@ class BaseDataset(data.Dataset):
             return self[(index + 1) % len(self)]
         
         image = self.item_image(index)
+        # Resize guide to the same size as the image
+        guide = cv2.resize(guide, (image.shape[1], image.shape[0]), interpolation=cv2.INTER_AREA) #width and height
+
+
+
         extra_text = ''
 
         if self.random_rotate:
