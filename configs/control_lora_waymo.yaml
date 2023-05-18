@@ -41,7 +41,7 @@ dataset:
     data_types:
       - target: control_lora.datasets.MixDataset
         params:
-          path: data/mpii-preprocessed
+          path: data/waymo-preprocessed
           enable_zoom_out: true
           enable_zoom_in: true
           resample_thres: 100
@@ -100,7 +100,7 @@ trainer:
   target: control_lora.commands.trainer.Trainer
   params:
     pretrained_model_name_or_path: /scratch/network/xs6153/ControlLoRA/control_lora/pretrained
-    output_dir: ckpts/sd-v1-5-control-lora-encoder-only-mul-mix-high-resolution-part-128
+    output_dir: ckpts/sd-v1-5-control-lora-encoder-only-mul-mix-waymo
     train_batch_size: 1
     gradient_accumulation_steps: 1
     checkpointing_steps: 5000 #5000
@@ -111,9 +111,9 @@ trainer:
     lr_scheduler: constant
     lr_warmup_steps: 0
     max_train_steps: 10000 #200000
-    validation_prompt: portrait of a cute pink rabbit
+    validation_prompt: Pink cars which feel very happy and are able to fly 
     validation_epochs: -1
     mixed_precision: 'fp16'
     enable_xformers_memory_efficient_attention: false
     seed: 42
-    num_sampling_images: 100 #100
+    num_sampling_images: 10 #100

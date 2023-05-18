@@ -27,7 +27,7 @@ model:
     control_num_processors: [4, 4, 4, 2]
     control_sizes: [256, 256, 512, 512]
     control_out_channels: [320, 640, 1280, 1280]
-    rank: 128
+    rank: 64
     concat_hidden: true
     encoder_only: true
 
@@ -100,7 +100,7 @@ trainer:
   target: control_lora.commands.trainer.Trainer
   params:
     pretrained_model_name_or_path: /scratch/network/xs6153/ControlLoRA/control_lora/pretrained
-    output_dir: ckpts/sd-v1-5-control-lora-encoder-only-mul-mix-high-resolution-part-128
+    output_dir: ckpts/sd-v1-5-control-lora-encoder-only-mul-mix-high-resolution-part-rank-64
     train_batch_size: 1
     gradient_accumulation_steps: 1
     checkpointing_steps: 5000 #5000
@@ -115,5 +115,5 @@ trainer:
     validation_epochs: -1
     mixed_precision: 'fp16'
     enable_xformers_memory_efficient_attention: false
-    seed: 42
+    seed: 41
     num_sampling_images: 100 #100
